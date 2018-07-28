@@ -85,7 +85,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input});
     //Clarifai API
-      fetch('http://localhost:4000/imageurl', {
+    fetch('https://pure-everglades-31251.herokuapp.com/imageurl', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -95,7 +95,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if(response) {
-          fetch('http://localhost:4000/image', {
+          fetch('https://pure-everglades-31251.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
